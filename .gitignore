@@ -1,0 +1,7 @@
+# mpd
+.config/mpd
+!.config/mpd/mpd.conf
+
+# misc
+.config/nvim/.netrwhist
+
