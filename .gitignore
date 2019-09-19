@@ -2,6 +2,14 @@
 .config/mpd
 !.config/mpd/mpd.conf
 
+# vscode
+.config/Code
+!.config/Code/User/settings.json
+
 # misc
 .config/nvim/.netrwhist
-
+.config/chromium
+.config/menus
+.config/pulse
+.config/configstore
+.config/dconf
