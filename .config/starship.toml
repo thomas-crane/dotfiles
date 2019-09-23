@@ -3,3 +3,7 @@ symbol = "╰─"
 
 [package]
 style = "bold yellow"
+
+[rust]
+symbol = "⚙ "
+
