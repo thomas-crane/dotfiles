@@ -33,6 +33,9 @@ __prompt () {
 		"${reset}"
 }
 
+# bash completion
+[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+
 # if starship is not available, or we just want a simple prompt
 # uncomment the following line.
 # PS1=$(__prompt)
