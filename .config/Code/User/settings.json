@@ -6,8 +6,6 @@
     "window.zoomLevel": 1,
     "workbench.iconTheme": "material-icon-theme",
     "markdown.extension.toc.githubCompatibility": true,
-    "rust-client.channel": "stable",
-    "rust-client.disableRustup": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.lineNumbers": "relative"
 }
