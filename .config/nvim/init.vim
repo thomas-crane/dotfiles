@@ -15,6 +15,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
