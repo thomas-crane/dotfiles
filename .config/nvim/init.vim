@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
