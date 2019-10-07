@@ -8,38 +8,51 @@ endif
 " plugins
 call plug#begin('~/.local/share/nvim/site/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {
-	\ 'branch': 'next',
-	\ 'do': 'bash install.sh',
-	\ }
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 call plug#end()
 
 " airline settings
 let g:airline_powerline_fonts = 1
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-set completeopt=menu,noinsert
-" disable deoplete for markdown
-autocmd FileType markdown
-			\ call deoplete#custom#buffer_option('auto_complete', v:false)
-
-" language client config
+" coc settings
 set hidden
-let g:LanguageClient_serverCommands = {
-	\ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-	\ 'typescript':  ['~/.npm-global/bin/javascript-typescript-stdio'],
-	\ 'javascript': ['~/.npm-global/bin/javascript-typescript-stdio'],
-	\ }
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
 
-nnoremap <silent> gh :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" Use tab to go through the list of completions.
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_backspace() ? "\<TAB>" :
+	\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_backspace() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" Use Ctrl + Space to cancel the completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use enter to accept the current completion.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use [g and ]g to navigate to the previous and next diagnostic.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+""" Various keybinds
+" goto definition
+nmap <silent> gd <Plug>(coc-definition)
+
+" format current buffer on :Fmt
+command! -nargs=0 Fmt 	:call CocAction('format')
+" organise imports of current buffer on :OI
+command! -nargs=0 OI 	:call CocAction('runCommand', 'editor.action.organizeImport')
 
 set number relativenumber
 augroup numbertoggle
