@@ -14,3 +14,14 @@
 .config/configstore
 .config/dconf
 .config/discord
+.config/bookworm
+
+# coc
+## ignore everything except extensions/
+.config/coc/*
+!.config/coc/extensions
+## ignore everything in extesions/ except package.json
+.config/coc/extensions/*
+!.config/coc/extensions/package.json
+## I don't know why I have to do this for coc, but
+## not for the VSC config. It just doesn't work.
