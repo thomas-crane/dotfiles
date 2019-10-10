@@ -17,6 +17,9 @@ call plug#end()
 
 " airline settings
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 " coc settings
 set hidden
@@ -49,6 +52,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 """ Various keybinds
 " goto definition
 nmap <silent> gd <Plug>(coc-definition)
+" open explorer with ge
+nmap <silent> ge :CocCommand explorer --toggle<CR>
 
 " format current buffer on :Fmt
 command! -nargs=0 Fmt 	:call CocAction('format')
