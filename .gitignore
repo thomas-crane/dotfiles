@@ -15,6 +15,7 @@
 .config/dconf
 .config/discord
 .config/bookworm
+.config/Postman
 
 # coc
 ## ignore everything except extensions/
