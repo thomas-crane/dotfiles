@@ -6,6 +6,7 @@
     "coc-rust-analyzer": ">=0.0.12",
     "coc-tslint-plugin": ">=1.1.1",
     "coc-explorer": ">=0.0.36",
-    "coc-pairs": ">=1.2.18"
+    "coc-pairs": ">=1.2.18",
+    "coc-yaml": ">=1.0.2"
   }
 }
