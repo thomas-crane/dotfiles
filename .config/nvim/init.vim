@@ -21,6 +21,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
+" use space for leader key
+let mapleader = " "
+
 " coc settings
 set hidden
 set cmdheight=2
@@ -49,11 +52,31 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+" Highlight symbol under cursor when idle
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
+
 """ Various keybinds
 " goto definition
 nmap <silent> gd <Plug>(coc-definition)
 " open explorer with ge
 nmap <silent> ge :CocCommand explorer --toggle<CR>
+" rename current symbol
+nmap <leader>rn <Plug>(coc-rename)
+" do code action for current line
+nmap <leader>ca <Plug>(coc-codeaction)
+" autofix problem for current line
+nmap <leader>af <Plug>(coc-fix-current)
 
 " format current buffer on :Fmt
 command! -nargs=0 Fmt 	:call CocAction('format')
