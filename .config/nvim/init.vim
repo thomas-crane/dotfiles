@@ -12,14 +12,20 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
+
+" color scheme
+syntax on
+colorscheme dracula
 
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_theme = 'dark'
 
 " use space for leader key
 let mapleader = " "
