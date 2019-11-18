@@ -173,5 +173,5 @@ default_border pixel 2
 # polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
 
-# compton
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+# picom
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
