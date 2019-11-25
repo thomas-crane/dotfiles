@@ -16,6 +16,10 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
+" use 2 spaces by default
+set expandtab
+set shiftwidth=2
+
 " color scheme
 syntax on
 colorscheme dracula
