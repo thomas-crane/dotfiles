@@ -35,6 +35,15 @@ fi
 # keybinds
 xbindkeys
 
+# rebind caps lock to escape
+setxkbmap -option caps:escape
+
+# screen layout
+# file may not exist (e.g. on my laptop) so check first.
+if [[ -f ~/.screenlayout/default.sh ]]; then
+  ~/.screenlayout/default.sh &
+fi
+
 # background
 ~/.fehbg &
 
