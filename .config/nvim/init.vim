@@ -24,6 +24,10 @@ set shiftwidth=2
 syntax on
 colorscheme dracula
 
+" make the background transparent
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
