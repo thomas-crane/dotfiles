@@ -38,6 +38,9 @@ let g:airline_theme = 'dark'
 " use space for leader key
 let mapleader = " "
 
+" use Esc to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
 " coc settings
 set hidden
 set cmdheight=2
