@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 
 call plug#end()
 
@@ -23,6 +24,11 @@ set shiftwidth=2
 " color scheme
 syntax on
 colorscheme dracula
+
+" search options
+set ignorecase
+set smartcase
+set nohlsearch
 
 " make the background transparent
 highlight Normal ctermbg=none
