@@ -7,7 +7,7 @@
 
 # aliases
 alias ls='ls --color=auto'
-alias ll='ls -al'
+alias ll='ls -hal'
 alias grep='grep --color=auto'
 
 # set up the prompt
