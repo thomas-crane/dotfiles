@@ -92,6 +92,8 @@ endfunction
 """ Various keybinds
 " goto definition
 nmap <silent> gd <Plug>(coc-definition)
+" goto references
+nmap <silent> gr <Plug>(coc-references)
 " open explorer with ge
 nmap <silent> ge :CocCommand explorer --toggle<CR>
 " rename current symbol
