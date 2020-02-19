@@ -14,6 +14,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
