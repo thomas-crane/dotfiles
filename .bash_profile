@@ -13,9 +13,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # other env vars
 export EDITOR=nvim
+export FZF_DEFAULT_COMMAND="rg --files"
 
 # start X
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
+	exec startx -- -ardelay 200 -arinterval 40
 fi
 
