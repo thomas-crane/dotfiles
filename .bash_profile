@@ -17,6 +17,8 @@ export FZF_DEFAULT_COMMAND="rg --files"
 
 # start X
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx -- -ardelay 200 -arinterval 40
+  # arinterval is the ms delay between key repeats, not the repeat rate in Hz.
+  # If you use `xset r rate ... RATE` then the equivalent arinterval here is `1000 / RATE`.
+  exec startx -- -ardelay 200 -arinterval 25
 fi
 
